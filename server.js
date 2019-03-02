@@ -9,11 +9,11 @@ const server = express();
 const PORT = process.env.PORT || 3000;
 
 
-console.log(config.FB.PageAccessToken,config.FB.VerifyToken )
+console.log(config.FB.PageAccessToken, config.FB.VerifyToken)
 const fb = new fbeamer(config.FB);
 
-server.get('/', (req,res,next) => 
-{fb.registerHook(req, res);
+server.get('/', (req, res, next) => {
+    fb.registerHook(req, res);
     return next();
 });
 server.listen(PORT, () => console.log(`The bot server is running on port ${PORT}`));
@@ -21,6 +21,6 @@ server.listen(PORT, () => console.log(`The bot server is running on port ${PORT}
 server.use(bodyParser.json({ verify: fb.verifyRequest }));
 server.use(fb.incoming);
 server.use(fb.abortOnError);
-server.post('/', function (req, res) {
+server.post('/webhook', function (req, res) {
     res.status(200).send("done!");
-  });
+});
