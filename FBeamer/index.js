@@ -10,7 +10,7 @@ const chalk = require('chalk');
 class FBeamer {
     constructor({ PageAccessToken, VerifyToken }) {
         try {
-
+            console.log(PageAccessToken, VerifyToken);
             if (PageAccessToken && VerifyToken) {
                 this.PageAccessToken = PageAccessToken;
                 this.VerifyToken = VerifyToken;
