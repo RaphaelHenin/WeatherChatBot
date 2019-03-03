@@ -9,7 +9,7 @@ const server = express();
 const PORT = process.env.PORT || 3000;
 
 
-console.log(config.FB.PageAccessToken, config.FB.VerifyToken)
+console.log(config.FB.PageAccessToken, config.FB.VerifyToken);
 const fb = new fbeamer(config.FB);
 
 server.get('/', (req, res, next) => {
