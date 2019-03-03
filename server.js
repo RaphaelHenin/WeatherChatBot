@@ -16,7 +16,7 @@ server.get('/', (req, res, next) => {
     fb.registerHook(req, res);
     return next();
 });
-server.listen(PORT, () => console.log(`The bot server is running on port ${PORT}`));
+server.listen(PORT, () => console.log(`The weather bot server is running on port ${PORT}`));
 // body-parser is the first Express middleware.
 server.use(bodyParser.json({ verify: fb.verifyRequest }));
 server.use(fb.incoming);
