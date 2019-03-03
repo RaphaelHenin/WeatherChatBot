@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 
 console.log(config.FB.PageAccessToken, config.FB.VerifyToken);
-console.log(ENV["ACCESS_TOKEN"], ENV["VERIFY_TOKEN"]);
+console.log(process.env["ACCESS_TOKEN"], process.env["VERIFY_TOKEN"]);
 const fb = new fbeamer(config.FB);
 
 server.get('/', (req, res, next) => {
