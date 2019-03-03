@@ -8,10 +8,11 @@ const bodyParser = require('body-parser')
 const server = express();
 const PORT = process.env.PORT || 3000;
 
-
-console.log(config.FB.PageAccessToken, config.FB.VerifyToken);
 console.log(process.env["ACCESS_TOKEN"], process.env["VERIFY_TOKEN"]);
-const fb = new fbeamer(config.FB);
+const fb = new fbeamer({
+    "PageAccessToken": process.env["ACCESS_TOKEN"],
+    "VerifyToken": process.env["VERIFY_TOKEN"]
+});
 
 server.get('/', (req, res, next) => {
     fb.registerHook(req, res);
